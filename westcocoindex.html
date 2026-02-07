@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West CoCo Sports</title>
+  <style>
+    /* Color palette from Hawkeyes */
+    :root {
+      --primary-black: #000000;
+      --primary-gold: #ffb81c;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--white);
+      color: var(--primary-black);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: var(--primary-black);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--primary-gold);
+    }
+
+    .hero {
+      background-color: var(--primary-gold);
+      color: var(--primary-black);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+
+    .hero button {
+      background-color: var(--primary-black);
+      color: var(--primary-gold);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: var(--primary-black);
+    }
+
+    .programs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .program {
+      background-color: var(--primary-gold);
+      color: var(--primary-black);
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: var(--primary-black);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src=".png" alt="West CoCo Sports Logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Programs</a>
+      <a href="#">Schedule</a>
+      <a href="#">Coaches</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to WEST COCO Athletics</h1>
+    <p>Your path to excellence starts here!</p>
+    <button>Register Now</button>
+  </section>
+
+  <section class="section">
+    <h2>Our Programs</h2>
+    <div class="programs">
+      <div class="program">
+        <h3>Basketball Training</h3>
+        <p>Skill development for all ages and levels.</p>
+      </div>
+      <div class="program">
+        <h3>Summer Camps</h3>
+        <p>Fun and engaging camps for kids and teens.</p>
+      </div>
+      <div class="program">
+        <h3>Elite Teams</h3>
+        <p>Competitive teams to reach your potential.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About Us</h2>
+    <p>West CoCo Sports is dedicated to developing athletes and building character through sport. Founded by [Your Name], our mission is to provide high-quality coaching in a supportive environment.</p>
+  </section>
+
+  <section class="section">
+    <h2>Meet the Coaches</h2>
+    <p>[Coach profiles can go here]</p>
+  </section>
+
+  <footer>
+    <p>© 2026 West CoCo Sports | Contact: info@westcocosports.com</p>
+  </footer>
+</body>
+</html>
