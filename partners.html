@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Partners | WEST COCO ATHLETICS</title>
+
+  <style>
+    :root {
+      --primary-black: #000000;
+      --primary-gold: #ffb81c;
+      --white: #ffffff;
+      --gray: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--white);
+      color: var(--primary-black);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--primary-black);
+      border-bottom: 5px solid var(--primary-gold);
+      position: relative;
+      z-index: 1001;
+    }
+
+    .header-inner {
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 65px;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--primary-gold);
+    }
+
+    .spacer { display: none; }
+    .menu-toggle { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background-color: var(--primary-gold);
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin: 15px auto 0;
+      max-width: 900px;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* ===== PARTNER GRID ===== */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .partner-card {
+      background-color: var(--gray);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .partner-card h3 {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .partner-card p {
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* ===== INVITATION BLOCK ===== */
+    .invite {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .invite p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .invite button {
+      background-color: var(--primary-black);
+      color: var(--primary-gold);
+      border: none;
+      padding: 18px 40px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0.85;
+      cursor: default;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--primary-black);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+
+    footer p.disclaimer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #888;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .header-inner { padding: 12px 20px; }
+
+      .spacer {
+        display: block;
+        flex: 1;
+      }
+
+      .menu-toggle {
+        display: block;
+        flex: 1;
+        text-align: right;
+        color: white;
+        font-size: 2.2rem;
+        cursor: pointer;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-black);
+        border-bottom: 5px solid var(--primary-gold);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 15px 25px;
+        border-top: 1px solid #222;
+        font-size: 1.1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="spacer"></div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="WCCHOMELOGO.png" alt="West CoCo Athletics Logo">
+      </a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="westcocoregistration.html">Registration</a>
+        <a href="westcocoschedule.html">Schedule</a>
+        <a href="westcocostaff.html">Staff</a>
+        <a href="donate.html">Donate</a>
+        <a href="partners.html">Community Partners</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Community Partners</h1>
+  <p>
+    WEST COCO ATHLETICS is building meaningful partnerships with organizations
+    that share our commitment to youth development, health, and community impact.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Growing Together</h2>
+
+  <div class="partner-grid">
+    <div class="partner-card">
+      <h3>Why Partnerships Matter</h3>
+      <p>
+        Strong community partnerships allow us to expand access to quality
+        programming, create new opportunities for youth, and strengthen the
+        communities we serve.
+      </p>
+    </div>
+
+    <div class="partner-card">
+      <h3>Our Approach</h3>
+      <p>
+        We are intentional about partnering with organizations that value
+        integrity, inclusion, and positive youth development through sport.
+      </p>
+    </div>
+
+    <div class="partner-card">
+      <h3>Current Status</h3>
+      <p>
+        We are currently in the early stages of establishing community
+        partnerships and look forward to highlighting collaborators as
+        relationships are formed.
+      </p>
+    </div>
+  </div>
+
+  <div class="invite">
+    <p>
+      As WEST COCO ATHLETICS continues to grow, we welcome conversations with
+      local businesses, organizations, and community leaders interested in
+      supporting youth athletics and community engagement.
+    </p>
+    <button>Partnership Opportunities Coming Soon</button>
+  </div>
+</section>
+
+<footer>
+  <strong>WEST COCO ATHLETICS</strong><br>
+  info@westcocosports.com
+  <p class="disclaimer">
+    Partner listings will be added as formal collaborations are established.
+  </p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('active');
+  }
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
