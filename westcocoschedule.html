@@ -26,6 +26,8 @@
     header {
       background-color: var(--primary-black);
       border-bottom: 5px solid var(--primary-gold);
+      position: relative;
+      z-index: 1000;
     }
 
     .header-inner {
@@ -33,6 +35,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+      z-index: 1001;
     }
 
     header img {
@@ -56,8 +60,15 @@
       color: var(--primary-gold);
     }
 
-    .spacer { display: none; }
-    .menu-toggle { display: none; }
+    .menu-toggle {
+      display: none;
+      flex: 0;
+      text-align: right;
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+      z-index: 1002;
+    }
 
     /* ===== HERO ===== */
     .hero {
@@ -164,16 +175,7 @@
     @media (max-width: 768px) {
       .header-inner { padding: 12px 20px; }
 
-      .spacer { display: block; flex: 1; }
-
-      .menu-toggle {
-        display: block;
-        flex: 1;
-        text-align: right;
-        color: white;
-        font-size: 2.2rem;
-        cursor: pointer;
-      }
+      .menu-toggle { display: block; }
 
       nav {
         display: none;
@@ -184,6 +186,7 @@
         width: 100%;
         background-color: var(--primary-black);
         border-bottom: 5px solid var(--primary-gold);
+        z-index: 1001;
       }
 
       nav.active { display: flex; }
@@ -192,6 +195,7 @@
         padding: 15px 25px;
         border-top: 1px solid #222;
         font-size: 1.1rem;
+        margin: 0;
       }
 
       .hero h1 { font-size: 2.3rem; }
@@ -203,7 +207,6 @@
 
 <header>
   <div class="header-inner">
-    <div class="spacer"></div>
     <div class="logo">
       <a href="index.html">
         <img src="WCCHOMELOGO.png" alt="West CoCo Athletics Logo">
@@ -211,12 +214,12 @@
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="westcocoregistration.html">Registration</a>
-        <a href="westcocoschedule.html">Schedule</a>
-        <a href="westcocostaff.html">Staff</a>
-        <a href="donate.html">Donate</a>
-        <a href="partners.html">Community Partners</a>
+      <a href="index.html">Home</a>
+      <a href="westcocoregistration.html">Registration</a>
+      <a href="westcocoschedule.html">Schedule</a>
+      <a href="westcocostaff.html">Staff</a>
+      <a href="donate.html">Donate</a>
+      <a href="partners.html">Community Partners</a>
     </nav>
   </div>
 </header>
@@ -343,7 +346,6 @@
   </p>
 </section>
 
-
 <footer>
   <strong>WEST COCO ATHLETICS</strong><br>
   info@westcocosports.com
@@ -366,3 +368,4 @@
 
 </body>
 </html>
+
