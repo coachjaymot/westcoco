@@ -28,6 +28,8 @@
       background-color: var(--primary-black);
       border-bottom: 5px solid var(--primary-gold);
       width: 100%;
+      position: relative;
+      z-index: 1001;
     }
 
     .header-inner {
@@ -45,6 +47,7 @@
       display: block;
     }
 
+    /* Desktop Navigation */
     nav {
       display: flex;
     }
@@ -60,6 +63,15 @@
 
     nav a:hover {
       color: var(--primary-gold);
+    }
+
+    /* Mobile Menu Toggle (Hamburger) */
+    .menu-toggle {
+      display: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
     }
 
     /* ===== HERO ===== */
@@ -94,8 +106,8 @@
 
     /* ===== SECTIONS ===== */
     .section {
-      padding: 40px 20px; /* Reduced from 60px to bring sections closer */
-      max-width: 1400px; /* Widened to accommodate 6 columns comfortably */
+      padding: 40px 20px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -103,13 +115,12 @@
       text-align: center;
       text-transform: uppercase;
       color: var(--primary-black);
-      margin-bottom: 30px; /* Reduced margin */
+      margin-bottom: 30px;
     }
 
-    /* ===== PROGRAMS GRID (One Row) ===== */
+    /* ===== PROGRAMS GRID ===== */
     .programs {
       display: grid;
-      /* Forces 6 equal columns on desktop */
       grid-template-columns: repeat(6, 1fr); 
       gap: 15px;
       margin-top: 20px;
@@ -130,7 +141,7 @@
     .program h3 {
       text-transform: uppercase;
       margin-top: 0;
-      font-size: 0.9rem; /* Slightly smaller to fit 6 in a row */
+      font-size: 0.9rem;
     }
 
     .program p {
@@ -158,15 +169,6 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .org-card h3 {
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    .org-card p {
-      line-height: 1.6;
-    }
-
     /* ===== FOOTER ===== */
     footer {
       background-color: var(--primary-black);
@@ -175,29 +177,48 @@
       padding: 30px 20px;
     }
 
-    footer p {
-      margin-top: 15px;
-      font-size: 0.8rem;
-      color: #ccc;
-    }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .programs {
-        grid-template-columns: repeat(3, 1fr); /* 3x2 grid on tablets */
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     @media (max-width: 768px) {
       .header-inner {
-        justify-content: center;
+        padding: 12px 20px;
       }
+      
+      .menu-toggle {
+        display: block; /* Show hamburger */
+      }
+
       nav {
-        display: none;
+        display: none; /* Hide standard nav */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-black);
+        border-bottom: 5px solid var(--primary-gold);
+        padding: 20px 0;
       }
+
+      nav.active {
+        display: flex; /* Show when toggled */
+      }
+
+      nav a {
+        margin: 10px 0;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+      }
+
       .programs {
-        grid-template-columns: repeat(2, 1fr); /* 2x3 grid on mobile */
+        grid-template-columns: repeat(2, 1fr);
       }
+      
       .hero h1 {
         font-size: 2em;
       }
@@ -206,14 +227,17 @@
 </head>
 <body>
 
-<header>
+  <header>
     <div class="header-inner">
       <div class="logo">
         <a href="index.html">
           <img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo">
         </a>
       </div>
-      <nav>
+      
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+      <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="westcocoregistration.html">Registration</a>
         <a href="westcocostaff.html">Staff</a>
@@ -277,6 +301,13 @@
     © 2026 WEST COCO ATHLETICS • info@westcocosports.com
     <p>WEST COCO ATHLETICS is an independent nonprofit organization and is not affiliated with any school district or public school system.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
