@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Schedule | WEST COCO ATHLETICS</title>
+
+  <style>
+    :root {
+      --primary-black: #000000;
+      --primary-gold: #ffb81c;
+      --white: #ffffff;
+      --gray: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--white);
+      color: var(--primary-black);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--primary-black);
+      border-bottom: 5px solid var(--primary-gold);
+    }
+
+    .header-inner {
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 65px;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--primary-gold);
+    }
+
+    .spacer { display: none; }
+    .menu-toggle { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background-color: var(--primary-gold);
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin: 15px auto 0;
+      max-width: 900px;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ===== SCHEDULE GRID ===== */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .schedule-card {
+      background-color: var(--gray);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .schedule-card h3 {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .schedule-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    /* ===== NOTE ===== */
+    .note {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--primary-black);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+
+    footer p.disclaimer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #888;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .header-inner { padding: 12px 20px; }
+
+      .spacer { display: block; flex: 1; }
+
+      .menu-toggle {
+        display: block;
+        flex: 1;
+        text-align: right;
+        color: white;
+        font-size: 2.2rem;
+        cursor: pointer;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-black);
+        border-bottom: 5px solid var(--primary-gold);
+      }
+
+      nav.active { display: flex; }
+
+      nav a {
+        padding: 15px 25px;
+        border-top: 1px solid #222;
+        font-size: 1.1rem;
+      }
+
+      .hero h1 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="spacer"></div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="WCCHOMELOGO.png" alt="West CoCo Athletics Logo">
+      </a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="westcocoregistration.html">Registration</a>
+        <a href="westcocoschedule.html">Schedule</a>
+        <a href="westcocostaff.html">Staff</a>
+        <a href="donate.html">Donate</a>
+        <a href="partners.html">Community Partners</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Program Schedules</h1>
+  <p>
+    WEST COCO ATHLETICS programs follow seasonal schedules.
+    Specific dates and times are shared with families once registration opens.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Program Overview</h2>
+
+  <p class="section-intro">
+    Below is a general overview of how our programs are structured throughout the year.
+    Final schedules, locations, and competition details are communicated prior to each season.
+  </p>
+
+  <div class="schedule-grid">
+
+    <div class="schedule-card">
+      <h3>Basketball Teams</h3>
+      <ul>
+        <li>Seasonal league play</li>
+        <li>2–3 practices per week</li>
+        <li>Weekend competitions</li>
+      </ul>
+      <div class="status">Seasonal • Schedule released with registration</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Basketball Camps</h3>
+      <ul>
+        <li>Week-long sessions</li>
+        <li>Daytime instruction</li>
+        <li>Skill & fundamentals focus</li>
+      </ul>
+      <div class="status">Summer • Dates announced in advance</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Tennis Programs</h3>
+      <ul>
+        <li>Weekly group sessions</li>
+        <li>Season-based enrollment</li>
+        <li>Match play opportunities</li>
+      </ul>
+      <div class="status">Seasonal • Program-dependent</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Private Lessons</h3>
+      <ul>
+        <li>Flexible scheduling</li>
+        <li>One-on-one or small group</li>
+        <li>Customized development plans</li>
+      </ul>
+      <div class="status">Year-round • By appointment</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Adapted Fitness</h3>
+      <ul>
+        <li>Inclusive program design</li>
+        <li>Small group sessions</li>
+        <li>Individualized support</li>
+      </ul>
+      <div class="status">Coming soon</div>
+    </div>
+
+  </div>
+
+  <p class="note">
+    Full schedules, locations, and expectations are provided prior to the start of each program.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Past Events</h2>
+
+  <p class="section-intro">
+    WEST COCO ATHLETICS is proud of the programs and events we have hosted in previous seasons.
+    While our organization continues to grow, this section highlights past activities and community engagement.
+  </p>
+
+  <div class="schedule-grid">
+
+    <div class="schedule-card">
+      <h3>Summer Basketball Camp 2025</h3>
+      <ul>
+        <li>Week-long skills and fundamentals camp</li>
+        <li>Over 50 participants engaged</li>
+        <li>Team-building and community focus</li>
+      </ul>
+      <div class="status">Completed</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Spring Tennis Clinics 2025</h3>
+      <ul>
+        <li>Weekly group instruction</li>
+        <li>Match play and skill assessment</li>
+        <li>Open to all levels</li>
+      </ul>
+      <div class="status">Completed</div>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Community Fitness Day</h3>
+      <ul>
+        <li>Free community event promoting active lifestyles</li>
+        <li>Inclusive fitness and games for all ages</li>
+        <li>Local families and participants</li>
+      </ul>
+      <div class="status">Completed</div>
+    </div>
+
+  </div>
+
+  <p class="note">
+    We look forward to expanding our events and sharing highlights from future seasons here.
+  </p>
+</section>
+
+
+<footer>
+  <strong>WEST COCO ATHLETICS</strong><br>
+  info@westcocosports.com
+  <p class="disclaimer">
+    Program schedules are subject to change based on season, facility availability, and enrollment.
+  </p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('active');
+  }
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
