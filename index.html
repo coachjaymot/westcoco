@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEST COCO ATHLETICS</title>
+  <title>WEST COCO ATHLETICS | Home</title>
   <style>
     :root {
       --primary-black: #000000;
@@ -21,9 +21,10 @@
       font-family: Arial, Helvetica, sans-serif;
       background-color: var(--white);
       color: var(--primary-black);
+      overflow-x: hidden;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER & NAV ===== */
     header {
       background-color: var(--primary-black);
       border-bottom: 5px solid var(--primary-gold);
@@ -34,8 +35,6 @@
 
     .header-inner {
       width: 100%;
-      max-width: 100%;
-      margin: 0;
       padding: 12px 40px; 
       display: flex;
       align-items: center;
@@ -47,7 +46,7 @@
       display: block;
     }
 
-    /* Desktop Navigation */
+    /* Desktop Nav */
     nav {
       display: flex;
     }
@@ -59,22 +58,17 @@
       font-weight: 700;
       text-transform: uppercase;
       font-size: 0.9rem;
+      transition: color 0.2s;
     }
 
     nav a:hover {
       color: var(--primary-gold);
     }
 
-    /* Mobile Menu Toggle (Hamburger) */
-    .menu-toggle {
-      display: none;
-      color: var(--white);
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-    }
+    .spacer { display: none; } /* Used for mobile centering only */
+    .menu-toggle { display: none; }
 
-    /* ===== HERO ===== */
+    /* ===== HERO SECTION ===== */
     .hero {
       background-color: var(--primary-gold);
       color: var(--primary-black);
@@ -84,29 +78,37 @@
 
     .hero h1 {
       margin: 0;
-      font-size: 3em;
+      font-size: 3.5rem;
       text-transform: uppercase;
+      letter-spacing: -1px;
     }
 
     .hero p {
-      font-size: 1.2em;
-      margin: 10px 0 20px;
+      font-size: 1.25rem;
+      margin: 15px 0 30px;
+      font-weight: 500;
     }
 
     .hero button {
       background-color: var(--primary-black);
       color: var(--primary-gold);
       border: none;
-      padding: 15px 30px;
-      font-size: 1em;
+      padding: 18px 40px;
+      font-size: 1.1rem;
       cursor: pointer;
       font-weight: bold;
       text-transform: uppercase;
+      transition: transform 0.2s, background-color 0.2s;
     }
 
-    /* ===== SECTIONS ===== */
+    .hero button:hover {
+      transform: scale(1.05);
+      background-color: #222;
+    }
+
+    /* ===== SECTION GENERAL ===== */
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -114,59 +116,71 @@
     .section h2 {
       text-align: center;
       text-transform: uppercase;
-      color: var(--primary-black);
-      margin-bottom: 30px;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
     }
 
-    /* ===== PROGRAMS GRID ===== */
+    /* ===== PROGRAMS GRID (One Row Desktop) ===== */
     .programs {
       display: grid;
       grid-template-columns: repeat(6, 1fr); 
       gap: 15px;
-      margin-top: 20px;
     }
 
     .program {
       background-color: var(--primary-gold);
       color: var(--primary-black);
-      padding: 20px 10px;
+      padding: 25px 10px;
       text-align: center;
-      border-radius: 10px;
-      transition: transform 0.3s;
+      border-radius: 12px;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-height: 160px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .program h3 {
       text-transform: uppercase;
-      margin-top: 0;
-      font-size: 0.9rem;
+      margin: 0 0 10px 0;
+      font-size: 0.95rem;
     }
 
     .program p {
-      font-size: 0.8rem;
-      margin-bottom: 0;
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.4;
     }
 
     .program:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     }
 
     /* ===== ORGANIZATION GRID ===== */
     .org-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
     .org-card {
       background-color: var(--gray);
-      padding: 30px;
-      border-radius: 10px;
+      padding: 40px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .org-card h3 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .org-card p {
+      line-height: 1.7;
+      font-size: 1.05rem;
     }
 
     /* ===== FOOTER ===== */
@@ -174,54 +188,72 @@
       background-color: var(--primary-black);
       color: var(--white);
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
+      margin-top: 40px;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .programs {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    footer p.disclaimer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #888;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== MOBILE & TABLET RESPONSIVE ===== */
+    
+    @media (max-width: 1100px) {
+      .programs { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 768px) {
       .header-inner {
         padding: 12px 20px;
       }
-      
+
+      /* Centering Logic */
+      .spacer {
+        display: block;
+        flex: 1;
+      }
+      .logo {
+        flex: 0;
+      }
       .menu-toggle {
-        display: block; /* Show hamburger */
+        display: block;
+        flex: 1;
+        text-align: right;
+        color: white;
+        font-size: 2.2rem;
+        cursor: pointer;
       }
 
       nav {
-        display: none; /* Hide standard nav */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Sits below header */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--primary-black);
         border-bottom: 5px solid var(--primary-gold);
-        padding: 20px 0;
+        padding: 10px 0;
       }
 
       nav.active {
-        display: flex; /* Show when toggled */
+        display: flex;
       }
 
       nav a {
-        margin: 10px 0;
-        padding: 10px 20px;
+        margin: 0;
+        padding: 15px 25px;
+        border-top: 1px solid #222;
         font-size: 1.1rem;
       }
 
-      .programs {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .hero h1 {
-        font-size: 2em;
-      }
+      .hero h1 { font-size: 2.4rem; }
+      .programs { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -229,7 +261,7 @@
 
   <header>
     <div class="header-inner">
-      <div class="logo">
+      <div class="spacer"></div> <div class="logo">
         <a href="index.html">
           <img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo">
         </a>
@@ -248,8 +280,8 @@
   </header>
 
   <section class="hero">
-    <h1>Welcome to WEST COCO Athletics</h1>
-    <p>Your path to excellence starts here!</p>
+    <h1>WEST COCO Athletics</h1>
+    <p>Empowering athletes through skill, confidence, and character.</p>
     <button onclick="location.href='westcocoregistration.html'">Register Now</button>
   </section>
 
@@ -258,48 +290,50 @@
     <div class="programs">
       <div class="program">
         <h3>Basketball Teams</h3>
-        <p>Competitive basketball programs for youth groups.</p>
+        <p>Competitive youth basketball programs.</p>
       </div>
       <div class="program">
         <h3>Basketball Camps</h3>
-        <p>Fun and engaging basketball camps.</p>
+        <p>Engaging skill-building summer camps.</p>
       </div>
       <div class="program">
         <h3>Tennis Teams</h3>
-        <p>Competitive youth tennis teams.</p>
+        <p>Youth competitive tennis development.</p>
       </div>
       <div class="program">
         <h3>Tennis Lessons</h3>
-        <p>Private or group skills.</p>
+        <p>Private and group instruction.</p>
       </div>
       <div class="program">
         <h3>Personal Training</h3>
-        <p>Coming soon.</p>
+        <p>Elite performance coaching. (Soon)</p>
       </div>
       <div class="program">
         <h3>Adapted Fitness</h3>
-        <p>Coming soon.</p>
+        <p>Inclusive sports for all abilities. (Soon)</p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Our Organization</h2>
     <div class="org-grid">
       <div class="org-card">
         <h3>Our Mission</h3>
-        <p>WEST COCO ATHLETICS is committed to providing high-quality athletic programs that develop skill, confidence, and character.</p>
+        <p>To provide high-quality athletic programs that develop the technical skills and personal character of every athlete we serve.</p>
       </div>
       <div class="org-card">
         <h3>Our Vision</h3>
-        <p>To be a trusted community-based organization that empowers athletes through sport, promotes leadership, and fosters teamwork.</p>
+        <p>To be the premier community-based sports organization that fosters leadership, teamwork, and lifelong health.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2026 WEST COCO ATHLETICS • info@westcocosports.com
-    <p>WEST COCO ATHLETICS is an independent nonprofit organization and is not affiliated with any school district or public school system.</p>
+    <div class="footer-content">
+      <strong>WEST COCO ATHLETICS</strong><br>
+      info@westcocosports.com
+      <p class="disclaimer">WEST COCO ATHLETICS is an independent nonprofit organization and is not affiliated with any school district or public school system.</p>
+    </div>
   </footer>
 
   <script>
@@ -307,6 +341,13 @@
       const nav = document.getElementById('nav-menu');
       nav.classList.toggle('active');
     }
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('active');
+      });
+    });
   </script>
 
 </body>
