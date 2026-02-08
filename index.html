@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEST COCO ATHLETICS</title>
+  <style>
+    :root {
+      --primary-black: #000000;
+      --primary-gold: #ffb81c;
+      --white: #ffffff;
+      --gray: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--white);
+      color: var(--primary-black);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--primary-black);
+      border-bottom: 5px solid var(--primary-gold);
+      width: 100%;
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 12px 40px; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 65px;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--primary-gold);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background-color: var(--primary-gold);
+      color: var(--primary-black);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+
+    .hero button {
+      background-color: var(--primary-black);
+      color: var(--primary-gold);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 40px 20px; /* Reduced from 60px to bring sections closer */
+      max-width: 1400px; /* Widened to accommodate 6 columns comfortably */
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--primary-black);
+      margin-bottom: 30px; /* Reduced margin */
+    }
+
+    /* ===== PROGRAMS GRID (One Row) ===== */
+    .programs {
+      display: grid;
+      /* Forces 6 equal columns on desktop */
+      grid-template-columns: repeat(6, 1fr); 
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .program {
+      background-color: var(--primary-gold);
+      color: var(--primary-black);
+      padding: 20px 10px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .program h3 {
+      text-transform: uppercase;
+      margin-top: 0;
+      font-size: 0.9rem; /* Slightly smaller to fit 6 in a row */
+    }
+
+    .program p {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
+
+    .program:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ===== ORGANIZATION GRID ===== */
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .org-card {
+      background-color: var(--gray);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .org-card h3 {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .org-card p {
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--primary-black);
+      color: var(--white);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin-top: 15px;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .programs {
+        grid-template-columns: repeat(3, 1fr); /* 3x2 grid on tablets */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        justify-content: center;
+      }
+      nav {
+        display: none;
+      }
+      .programs {
+        grid-template-columns: repeat(2, 1fr); /* 2x3 grid on mobile */
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="westcocoregistration.html">Registration</a>
+        <a href="westcocostaff.html">Staff</a>
+        <a href="#">Donate</a>
+        <a href="#">Community Partners</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to WEST COCO Athletics</h1>
+    <p>Your path to excellence starts here!</p>
+    <button onclick="location.href='westcocoregistration.html'">Register Now</button>
+  </section>
+
+  <section class="section">
+    <h2>Our Programs</h2>
+    <div class="programs">
+      <div class="program">
+        <h3>Basketball Teams</h3>
+        <p>Competitive basketball programs for youth groups.</p>
+      </div>
+      <div class="program">
+        <h3>Basketball Camps</h3>
+        <p>Fun and engaging basketball camps.</p>
+      </div>
+      <div class="program">
+        <h3>Tennis Teams</h3>
+        <p>Competitive youth tennis teams.</p>
+      </div>
+      <div class="program">
+        <h3>Tennis Lessons</h3>
+        <p>Private or group skills.</p>
+      </div>
+      <div class="program">
+        <h3>Personal Training</h3>
+        <p>Coming soon.</p>
+      </div>
+      <div class="program">
+        <h3>Adapted Fitness</h3>
+        <p>Coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Our Organization</h2>
+    <div class="org-grid">
+      <div class="org-card">
+        <h3>Our Mission</h3>
+        <p>WEST COCO ATHLETICS is committed to providing high-quality athletic programs that develop skill, confidence, and character.</p>
+      </div>
+      <div class="org-card">
+        <h3>Our Vision</h3>
+        <p>To be a trusted community-based organization that empowers athletes through sport, promotes leadership, and fosters teamwork.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 WEST COCO ATHLETICS • info@westcocosports.com
+    <p>WEST COCO ATHLETICS is an independent nonprofit organization and is not affiliated with any school district or public school system.</p>
+  </footer>
+
+</body>
+</html>
