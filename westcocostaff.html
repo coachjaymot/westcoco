@@ -24,21 +24,21 @@
       color: var(--black);
     }
 
-    /* ===== FIXED HEADER (Matches Registration/Home) ===== */
+    /* ===== HEADER & NAV ===== */
     header {
       background-color: var(--black);
       border-bottom: 5px solid var(--gold);
       width: 100%;
+      position: relative;
+      z-index: 1001;
     }
 
     .header-inner {
       width: 100%;
-      max-width: 100%; /* Ensures flush-to-edge on desktop */
-      margin: 0;
       padding: 12px 40px; 
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Pins logo left, nav right */
+      justify-content: space-between;
     }
 
     header img {
@@ -63,6 +63,10 @@
       color: var(--gold);
     }
 
+    /* Mobile Elements */
+    .spacer { display: none; }
+    .menu-toggle { display: none; }
+
     /* ===== PAGE TITLE ===== */
     .page-title {
       background-color: var(--gold);
@@ -74,11 +78,6 @@
       margin: 0;
       font-size: 2.8rem;
       text-transform: uppercase;
-    }
-
-    .page-title p {
-      font-size: 1.2rem;
-      margin-top: 10px;
     }
 
     /* ===== STAFF GRID ===== */
@@ -99,7 +98,7 @@
       padding: 30px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Slight shadow to match reg page */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
     .staff-card img {
@@ -108,17 +107,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      border: 3px solid var(--gold); /* Added subtle gold ring to photos */
-    }
-
-    .staff-card h3 {
-      margin: 10px 0 5px;
-      text-transform: uppercase;
-    }
-
-    .staff-card p {
-      font-size: 0.95rem;
-      color: #333;
+      border: 3px solid var(--gold);
     }
 
     /* ===== FOOTER ===== */
@@ -126,19 +115,54 @@
       background-color: var(--black);
       color: var(--white);
       text-align: center;
-      padding: 25px 15px;
+      padding: 40px 20px;
       font-size: 0.9rem;
     }
 
-    /* ===== MOBILE ADJUSTMENTS ===== */
+    /* ===== MOBILE STYLES ===== */
     @media (max-width: 768px) {
       .header-inner {
-        justify-content: center; /* Center logo on mobile */
-        padding: 15px;
+        padding: 12px 20px;
       }
-      
+
+      /* Centering Logic */
+      .spacer {
+        display: block;
+        flex: 1;
+      }
+      .logo {
+        flex: 0;
+      }
+      .menu-toggle {
+        display: block;
+        flex: 1;
+        text-align: right;
+        color: white;
+        font-size: 2.2rem;
+        cursor: pointer;
+      }
+
       nav {
-        display: none; /* Hide nav on mobile */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--black);
+        border-bottom: 5px solid var(--gold);
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0;
+        padding: 15px 25px;
+        border-top: 1px solid #222;
+        font-size: 1.1rem;
       }
 
       .page-title h1 {
@@ -150,14 +174,19 @@
 
 <body>
 
-<header>
+  <header>
     <div class="header-inner">
+      <div class="spacer"></div>
+      
       <div class="logo">
         <a href="index.html">
           <img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo">
         </a>
       </div>
-      <nav>
+      
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+      <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="westcocoregistration.html">Registration</a>
         <a href="westcocostaff.html">Staff</a>
@@ -174,7 +203,6 @@
 
   <section class="staff-section">
     <div class="staff-grid">
-
       <div class="staff-card">
         <img src="coach1.jpg" alt="Coach Jeff Jaymot">
         <h3>Jeff Jaymot</h3>
@@ -202,13 +230,19 @@
         <p>Program Coordinator</p>
         <p>Sarah oversees program operations and ensures a supportive, organized environment for all athletes.</p>
       </div>
-
     </div>
   </section>
 
   <footer>
     © 2026 WEST COCO ATHLETICS • info@westcocosports.com
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
