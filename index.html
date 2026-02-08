@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEST COCO ATHLETICS | Home</title>
+
   <style>
     :root {
       --primary-black: #000000;
@@ -12,9 +13,7 @@
       --gray: #f5f5f5;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -46,7 +45,6 @@
       display: block;
     }
 
-    /* Desktop Nav */
     nav {
       display: flex;
     }
@@ -65,19 +63,19 @@
       color: var(--primary-gold);
     }
 
-    .spacer { display: none; } /* Used for mobile centering only */
+    .spacer { display: none; }
     .menu-toggle { display: none; }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== HERO SECTION (slimmer) ===== */
     .hero {
       background-color: var(--primary-gold);
       color: var(--primary-black);
       text-align: center;
-      padding: 100px 20px;
+      padding: 65px 20px; /* reduced from 100px to slim down */
     }
 
     .hero h1 {
-      margin: 0;
+      margin: 0 0 10px 0; /* slightly tighter spacing */
       font-size: 3.5rem;
       text-transform: uppercase;
       letter-spacing: -1px;
@@ -85,7 +83,7 @@
 
     .hero p {
       font-size: 1.25rem;
-      margin: 15px 0 30px;
+      margin: 10px 0 22px 0; /* reduced bottom margin */
       font-weight: 500;
     }
 
@@ -93,7 +91,7 @@
       background-color: var(--primary-black);
       color: var(--primary-gold);
       border: none;
-      padding: 18px 40px;
+      padding: 14px 36px; /* slightly slimmer than original */
       font-size: 1.1rem;
       cursor: pointer;
       font-weight: bold;
@@ -120,7 +118,7 @@
       margin-bottom: 40px;
     }
 
-    /* ===== PROGRAMS GRID (One Row Desktop) ===== */
+    /* ===== PROGRAMS GRID ===== */
     .programs {
       display: grid;
       grid-template-columns: repeat(6, 1fr); 
@@ -202,7 +200,6 @@
     }
 
     /* ===== MOBILE & TABLET RESPONSIVE ===== */
-    
     @media (max-width: 1100px) {
       .programs { grid-template-columns: repeat(3, 1fr); }
     }
@@ -212,14 +209,9 @@
         padding: 12px 20px;
       }
 
-      /* Centering Logic */
-      .spacer {
-        display: block;
-        flex: 1;
-      }
-      .logo {
-        flex: 0;
-      }
+      .spacer { display: block; flex: 1; }
+      .logo { flex: 0; }
+
       .menu-toggle {
         display: block;
         flex: 1;
@@ -241,9 +233,7 @@
         padding: 10px 0;
       }
 
-      nav.active {
-        display: flex;
-      }
+      nav.active { display: flex; }
 
       nav a {
         margin: 0;
@@ -259,32 +249,33 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <div class="spacer"></div> <div class="logo">
-        <a href="index.html">
-          <img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo">
-        </a>
+      <div class="spacer"></div>
+      <div class="logo">
+        <a href="index.html"><img src="WCCHOMELOGO.png" alt="West CoCo Sports Logo"></a>
       </div>
-      
       <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-
       <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="westcocoregistration.html">Registration</a>
+        <a href="westcocoschedule.html">Schedule</a>
         <a href="westcocostaff.html">Staff</a>
-        <a href="#">Donate</a>
-        <a href="#">Community Partners</a>
+        <a href="donate.html">Donate</a>
+        <a href="partners.html">Community Partners</a>
       </nav>
     </div>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero">
     <h1>WEST COCO Athletics</h1>
     <p>Empowering athletes through skill, confidence, and character.</p>
     <button onclick="location.href='westcocoregistration.html'">Register Now</button>
   </section>
 
+  <!-- PROGRAMS SECTION -->
   <section class="section">
     <h2>Our Programs</h2>
     <div class="programs">
@@ -315,6 +306,7 @@
     </div>
   </section>
 
+  <!-- ORGANIZATION SECTION -->
   <section class="section">
     <div class="org-grid">
       <div class="org-card">
@@ -328,6 +320,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <strong>WEST COCO ATHLETICS</strong><br>
@@ -336,19 +329,22 @@
     </div>
   </footer>
 
+  <!-- MENU TOGGLE SCRIPT -->
   <script>
     function toggleMenu() {
       const nav = document.getElementById('nav-menu');
       nav.classList.toggle('active');
     }
-    
-    // Close menu when clicking a link
+
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('nav-menu').classList.remove('active');
       });
     });
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
