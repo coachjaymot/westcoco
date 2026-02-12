@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff & Board | WEST COCO ATHLETICS</title>
+  <title>Coming Soon | WEST COCO ATHLETICS</title>
 
   <style>
     :root {
@@ -39,36 +39,26 @@
       justify-content: space-between;
     }
 
-    header img {
-      height: 65px;
-      display: block;
-    }
-
+    header img { height: 65px; display: block; }
     nav { display: flex; }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
+    nav a { color: var(--white); text-decoration: none; margin-left: 25px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
     nav a:hover { color: var(--gold); }
-
-    /* Mobile Elements */
     .spacer { display: none; }
     .menu-toggle { display: none; }
 
-    /* ===== PAGE TITLE ===== */
+    /* ===== PAGE TITLE / BANNER ===== */
     .page-title {
       background-color: var(--gold);
       padding: 60px 20px;
       text-align: center;
     }
 
-    .page-title h1 { margin: 0; font-size: 2.8rem; text-transform: uppercase; }
+    .page-title h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      color: var(--black);
+    }
 
     .page-title p.note {
       font-size: 0.95rem;
@@ -78,31 +68,42 @@
       margin-right: auto;
     }
 
-    /* ===== STAFF GRID ===== */
-    .staff-section {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .staff-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* fixed 3 columns */
-      gap: 30px;
-    }
-
-    .staff-card {
-      background-color: var(--white);
-      padding: 25px;
-      border-radius: 10px;
+    /* ===== COMING SOON SECTION ===== */
+    .coming-soon {
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 150px 20px;
     }
 
-    .staff-card h3 { margin-bottom: 8px; font-size: 1.3rem; }
-    .staff-card p { margin: 5px 0; font-size: 0.95rem; }
+    .coming-soon h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--black);
+      text-transform: uppercase;
+    }
 
-    /* ===== FOOTER ===== */
+    .coming-soon p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .coming-soon .cta-btn {
+      background-color: var(--black);
+      color: var(--gold);
+      text-decoration: none;
+      padding: 18px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .coming-soon .cta-btn:hover {
+      background-color: var(--gold);
+      color: var(--black);
+    }
+
     footer {
       background-color: var(--black);
       color: var(--white);
@@ -116,37 +117,18 @@
       .header-inner { padding: 12px 20px; }
       .spacer { display: block; flex: 1; }
       .logo { flex: 0; }
-      .menu-toggle {
-        display: block;
-        flex: 1;
-        text-align: right;
-        color: white;
-        font-size: 2.2rem;
-        cursor: pointer;
-      }
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--black);
-        border-bottom: 5px solid var(--gold);
-        padding: 10px 0;
-      }
+      .menu-toggle { display: block; flex: 1; text-align: right; color: white; font-size: 2.2rem; cursor: pointer; }
+      nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--black); border-bottom: 5px solid var(--gold); padding: 10px 0; }
       nav.active { display: flex; }
       nav a { margin: 0; padding: 15px 25px; border-top: 1px solid #222; font-size: 1.1rem; }
       .page-title h1 { font-size: 2rem; }
-
-      /* Staff grid stacks to single column */
-      .staff-grid { grid-template-columns: 1fr; }
+      .coming-soon h2 { font-size: 1.5rem; }
+      .coming-soon p { font-size: 1rem; }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="header-inner">
       <div class="spacer"></div>
@@ -159,81 +141,27 @@
       <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="westcocoregistration.html">Registration</a>
+        <a href="feeschedule.html">Fees</a>
         <a href="westcocoschedule.html">Schedule</a>
         <a href="westcocostaff.html">Staff</a>
         <a href="donate.html">Donate</a>
         <a href="partners.html">Community Partners</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== PAGE TITLE ===== -->
+  <!-- ===== OUR TEAM BANNER ===== -->
   <section class="page-title">
     <h1>Our Team</h1>
-    <p>Board Members and Program Staff Dedicated to Developing Athletes</p>
-    <p class="note">
-      The Board of Directors oversees the WEST COCO ATHLETICS FOUNDATION 501(c)3 for governance and donations, 
-      while Program Leadership and Coaches operate day-to-day programs through WEST COCO ATHLETICS LLC.
-    </p>
+    <p class="note">Coming Soon! We’re building our team page — check back soon for updates on our board, advisors, and coaches.</p>
   </section>
 
-  <!-- ===== BOARD SECTION ===== -->
-  <section class="staff-section">
-    <h2 style="text-align:center; margin-bottom: 40px;">Board of Directors</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <h3>Ronnie Arnold</h3>
-        <p>Chair, WEST COCO ATHLETICS FOUNDATION</p>
-        <p>Oversees governance, compliance, and strategic direction.</p>
-      </div>
-      <div class="staff-card">
-        <h3>John Smith</h3>
-        <p>Treasurer</p>
-        <p>Manages finances and ensures transparency and accountability.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Lisa Chen</h3>
-        <p>Secretary</p>
-        <p>Documents meetings and supports policy implementation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== STAFF / COACHES SECTION ===== -->
-  <section class="staff-section">
-    <h2 style="text-align:center; margin-bottom: 40px;">Program Leadership & Coaches</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <h3>Jeff Jaymot</h3>
-        <p>Founder of WEST COCO ATHLETICS | Program Director & Head Basketball/Tennis Coach | Co-Founder, WEST COCO ATHLETICS FOUNDATION</p>
-        <p>Over a decade of coaching experience in basketball and tennis.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Marques Arnold</h3>
-        <p>Co-Founder, WEST COCO ATHLETICS FOUNDATION | Director of Community Outreach and Recruitment</p>
-        <p>Specializes in developing young athletes’ confidence and skills.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Robert Collins</h3>
-        <p>Rotating Basketball Coach</p>
-        <p>Focuses on both competitive and recreational tennis programs.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Maddy Felder</h3>
-        <p>Flag Football Coach</p>
-        <p>Oversees program operations and ensures a supportive environment.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Sandra Sanchez</h3>
-        <p>Rotating Basketball Coach</p>
-        <p>Coaching youth athletes with an emphasis on skill development and teamwork.</p>
-      </div>
-      <div class="staff-card">
-        <h3>Theodore Briscoe</h3>
-        <p>Rotating Coach</p>
-        <p>Leads personal fitness sessions and strength training programs.</p>
-      </div>
-    </div>
+  <!-- ===== COMING SOON CONTENT ===== -->
+  <section class="coming-soon">
+    <h2>Coming Soon</h2>
+    <p>We’re working hard to bring you this feature. Stay tuned!</p>
+    <a href="index.html" class="cta-btn">Return Home</a>
   </section>
 
   <footer>
@@ -246,7 +174,5 @@
       nav.classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
-
